@@ -25,13 +25,21 @@ namespace SortComparison
         public frmMain()
         {
             InitializeComponent();
+            
+
         }
+
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.tbSamples.Value = 80;
             this.cboAlg1.SelectedIndex = 3;
             this.cboAlg2.SelectedIndex = 12;
+           
+            
+            
+
 
         }
 
@@ -76,7 +84,7 @@ namespace SortComparison
 
             pnlSort1.Image = bmpsave1;
             pnlSort2.Image = bmpsave2;
-            
+
 
             array1 = new ArrayList(tbSamples.Value);
             array2 = new ArrayList(tbSamples.Value);
@@ -101,19 +109,19 @@ namespace SortComparison
         {
             int speed = 100 - tbSpeed.Value;
 
-            string alg1="";
-            string alg2="";
+            string alg1 = "";
+            string alg2 = "";
 
-            if(cboAlg1.SelectedItem!=null)
+            if (cboAlg1.SelectedItem != null)
                 alg1 = cboAlg1.SelectedItem.ToString();
 
-            if(cboAlg2.SelectedItem!=null)
+            if (cboAlg2.SelectedItem != null)
                 alg2 = cboAlg2.SelectedItem.ToString();
 
             SortAlgorithm sa = new SortAlgorithm(array1, pnlSort1, true, txtOutputFolder.Text, speed, alg1);
             SortAlgorithm sa2 = new SortAlgorithm(array2, pnlSort2, true, txtOutputFolder.Text, speed, alg2);
-            
-            ThreadStart ts = delegate()
+
+            ThreadStart ts = delegate ()
             {
                 try
                 {
@@ -165,7 +173,7 @@ namespace SortComparison
                             sa.PigeonHoleSort(array1);
                             break;
                     }
-                    if(chkAnimation.Checked)
+                    if (chkAnimation.Checked)
                         sa.CreateAnimation();
                     MessageBox.Show("Finish");
                 }
@@ -175,7 +183,7 @@ namespace SortComparison
                 }
             };
 
-            ThreadStart ts2 = delegate()
+            ThreadStart ts2 = delegate ()
             {
                 try
                 {
@@ -247,8 +255,8 @@ namespace SortComparison
                 Thread t2 = new Thread(ts2);
                 t2.Start();
             }
-        }        
-        
+        }
+
         private void btnSelectFolder_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
@@ -256,6 +264,14 @@ namespace SortComparison
                 this.txtOutputFolder.Text = folderBrowserDialog1.SelectedPath;
             }
         }
-      
+
+        private string InitializeOutputFolder()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\output";
+        }
+
+    
+
     }
 }
+
