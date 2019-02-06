@@ -38,7 +38,7 @@ namespace SortComparison
             this.cboAlg2.SelectedIndex = 12;
            this.cmdShuffle.PerformClick();
           this.cmdSort.ForeColor=Color.DarkGreen;
-           // this.InitializeOutputFolder();
+           this.InitializeOutputFolder();
 
         }
 
