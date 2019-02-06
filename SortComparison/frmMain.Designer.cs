@@ -113,12 +113,14 @@
             // 
             // cmdSort
             // 
+            this.cmdSort.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.cmdSort.ForeColor = System.Drawing.SystemColors.Control;
             this.cmdSort.Location = new System.Drawing.Point(344, 257);
             this.cmdSort.Name = "cmdSort";
             this.cmdSort.Size = new System.Drawing.Size(75, 23);
             this.cmdSort.TabIndex = 5;
             this.cmdSort.Text = "Sort";
-            this.cmdSort.UseVisualStyleBackColor = true;
+            this.cmdSort.UseVisualStyleBackColor = false;
             this.cmdSort.Click += new System.EventHandler(this.cmdSort_Click);
             // 
             // pnlSort1
@@ -226,7 +228,6 @@
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.Size = new System.Drawing.Size(215, 20);
             this.txtOutputFolder.TabIndex = 16;
-            this.txtOutputFolder.Text = "E:\\Sort";
             // 
             // label4
             // 
