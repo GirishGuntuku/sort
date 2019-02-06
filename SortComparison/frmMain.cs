@@ -38,9 +38,7 @@ namespace SortComparison
             this.cboAlg2.SelectedIndex = 12;
            this.cmdShuffle.PerformClick();
           this.cmdSort.ForeColor=Color.DarkGreen;
-            
-            
-
+            this.InitializeOutputFolder();
 
         }
 
@@ -68,7 +66,7 @@ namespace SortComparison
             {
                 int x = (int)(((double)pnlSort1.Width / array1.Count) * i);
 
-                Pen pen = new Pen(Color.Black);
+                Pen pen = new Pen(Color.Brown);
                 g1.DrawLine(pen, new Point(x, pnlSort1.Height), new Point(x, (int)(pnlSort1.Height - (int)array1[i])));
                 g2.DrawLine(pen, new Point(x, pnlSort1.Height), new Point(x, (int)(pnlSort2.Height - (int)array1[i])));
             }
