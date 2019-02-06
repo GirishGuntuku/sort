@@ -15,3 +15,4 @@
 <li>What is this.cmdShuffle?  Call its PerformClick() method before exiting Form1_Load.<br>
 <li>What is this.cmdSort?  Change its appearance (e.g. ForeColor or BackColor) to highlight it so users will click it. <br>
 <li>Make at least one other obvious improvement or customization as desired.<br>
+We have changed the color of lines in the application from black to brown
